@@ -115,6 +115,8 @@ function iniciarContagemRegressiva(id) {
     const intervalo = setInterval(() => {
         if (tempoTotal > 0) {
             tempoTotal--;
+            campo?.classList.remove('ended');
+            campo?.classList.add('start');
             // Converte o tempo total de volta para horas, minutos e segundos
             horas = Math.floor(tempoTotal / 3600);
             minutos = Math.floor((tempoTotal % 3600) / 60);
@@ -129,7 +131,7 @@ function iniciarContagemRegressiva(id) {
                 campo?.classList.add('ended');
             }
         }
-    }, 850); // 990 antes
+    }, 860); // 990 antes
 }
 // Função para salvar os campos em JSON
 function salvarCampos() {
